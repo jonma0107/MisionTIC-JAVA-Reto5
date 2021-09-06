@@ -6,7 +6,7 @@ import model.UsuarioModel;
 
 public interface InterfaceDAO {
     public List<UsuarioModel> obtenerUsuarios();
-    public UsuarioModel obtenerUsuario(int usu_cc);
+    public List<UsuarioModel> buscarUsuario(String dato, int validacion);
     public void agregarUsuario(UsuarioModel usuario);
     public void actualizarUsuario(UsuarioModel usuario);
     public void eliminarUsuario(int usu_cc);

@@ -45,5 +45,28 @@ public class UsuarioController {
     
     public void eliminarUsuario(int usu_cc){
         usuarioDAO.eliminarUsuario(usu_cc);
+    }
+    
+//    public UsuarioModel buscarUsuario(int usu_cc){
+//        usuarioDAO.buscarUsuario(usu_cc);
+//        return usuarioDAO.buscarUsuario(usu_cc);
+//    }
+    
+    public DefaultTableModel buscarUsuario(String dato, int validacion){
+        String[] titulos  =  {"Cédula Usuario", "Nombre Usuario", "Apellido Usuario", "Email Usuario"};
+        DefaultTableModel modelo = new DefaultTableModel(null, titulos);
+        List <UsuarioModel>  usuarios  = usuarioDAO.buscarUsuario(dato, validacion);
+        for(UsuarioModel usuario: usuarios){
+            String[] registro = new String[4];
+            registro[0] = usuario.getUsu_cc()+"";
+            registro[1] = usuario.getUsu_nombre();
+            registro[2] = usuario.getUsu_apellido();
+            registro[3] = usuario.getUsu_email();
+            modelo.addRow(registro);
+    }
+        return modelo;
+    
     } 
+    
+    
 }

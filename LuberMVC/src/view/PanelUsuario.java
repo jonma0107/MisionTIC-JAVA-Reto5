@@ -32,6 +32,10 @@ public class PanelUsuario extends JPanel {
         table.setModel(controller.consultarUsuarios());
     }
     
+    public void buscarUsuario(String dato, int validacion) {
+        table.setModel(controller.buscarUsuario(dato, validacion));
+    }
+    
     public JTable getTable() {
         return table;
     }
