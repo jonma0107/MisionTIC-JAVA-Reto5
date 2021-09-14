@@ -5,7 +5,7 @@ public class UsuarioModel {
     private String usu_nombre;
     private String usu_apellido;
     private String usu_email;
-    
+    // atributos de llaves foraneas según la B. D.
     private int usu_cc_via;
     private int usu_cc_fk;
  
